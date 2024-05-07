@@ -3,9 +3,9 @@ on:
     workflow_dispatch:
           inputs:
               publish:
-                  description: Publish to Modrinth and CurseForge
-                  required: true
-                  default: "false"
+                  #description: Publish to Modrinth and CurseForge
+                  #required: true
+                  #default: "false"
               patch:
                   description: Patch number, 0 for first (ex. Create 1.19.2 v0.5.0.g Patch N)
                   required: true
@@ -19,8 +19,8 @@ jobs:
       PUBLISH_SUFFIX: snapshots
       MAVEN_USER: ${{ secrets.MAVEN_USER }}
       MAVEN_PASS: ${{ secrets.MAVEN_PASS }}
-      MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-      CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+      #MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+      #CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
       PATCH_NUMBER: ${{ github.event.inputs.patch }}
       PUBLISHING: ${{ github.event.inputs.publish }}
     steps:
