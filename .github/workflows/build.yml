@@ -2,7 +2,7 @@ name: build
 on:
     workflow_dispatch:
           inputs:
-              publish:
+              #publish:
                   #description: Publish to Modrinth and CurseForge
                   #required: true
                   #default: "false"
