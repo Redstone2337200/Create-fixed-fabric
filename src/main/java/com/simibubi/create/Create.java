@@ -64,7 +64,7 @@ import net.minecraft.world.level.Level;
 public class Create implements ModInitializer {
 
 	public static final String ID = "create";
-	public static final String NAME = "Create";
+	public static final String NAME = "Create-edit";
 	public static final String VERSION = "0.5.1f";
 
 	public static final Logger LOGGER = LogUtils.getLogger();
