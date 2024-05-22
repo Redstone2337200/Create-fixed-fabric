@@ -56,7 +56,10 @@ public abstract class CreateEmiRecipe<T extends Recipe<?>> implements EmiRecipe 
 				input.add(EmiIngredient.of(pair.getFirst(), pair.getSecond().getValue()));
 			}
 			for (FluidIngredient ingredient : basin.getFluidIngredients()) {
-				input.add(fluidStack(ingredient.getMatchingFluidStacks().get(0)));
+				List<FluidStack> fluids = ingredient.getMatchingFluidStacks();
+				if (!fluids.isEmpty()) {
+					input.add(fluidStack(fluids.get(0)));
+				}
 			}
 			for (ItemStack stack : basin.getRollableResultsAsItemStacks()) {
 				output.add(EmiStack.of(stack));

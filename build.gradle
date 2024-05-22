@@ -159,6 +159,11 @@ loom {
     accessWidenerPath = file("src/main/resources/create.accesswidener")
 
     runs {
+        configureEach {
+            vmArg "-XX:+AllowEnhancedClassRedefinition"
+            vmArg "-XX:+IgnoreUnrecognizedVMOptions"
+        }
+
         datagen {
             client()
 

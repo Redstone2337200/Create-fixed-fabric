@@ -5,6 +5,10 @@ No formatting, just plain text. CurseForge support for it is terrible.
 
 Change logging starts below:
 ----------
+- added red sandpaper as a polishing workstation to EMI (#1453)
+- fix a possible error in EMI init (#1439)
+- fix deploying in EMI missing sandpaper and item application recipes (#1397)
 - switched from Forge Config API Port to Porting Lib Config
 - updated Porting Lib, fixing config syncing
 - fix waterwheels failing to assemble (#1424)
+- fix water wheel structural blocks having missing texture break particles

@@ -166,9 +166,10 @@ public class WaterWheelStructuralBlock extends DirectionalBlock implements IWren
 		return true;
 	}
 
+	// fabric: Don't add destroy effects, it'll create missingno particles
 	@Override
 	public boolean addDestroyEffects(BlockState state, ClientLevel Level, BlockPos pos, ParticleEngine manager) {
-		return true;
+		return false;
 	}
 
 	@Override

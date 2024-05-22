@@ -55,14 +55,11 @@ import com.simibubi.create.content.kinetics.millstone.MillingRecipe;
 import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.content.kinetics.saw.SawBlockEntity;
-import com.simibubi.create.content.legacy.ChromaticCompoundItem;
-import com.simibubi.create.content.legacy.NoGravMagicalDohickyItem;
 import com.simibubi.create.content.logistics.filter.AttributeFilterScreen;
 import com.simibubi.create.content.logistics.filter.FilterScreen;
 import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.content.redstone.link.controller.LinkedControllerScreen;
-import com.simibubi.create.content.trains.schedule.ScheduleItem;
 import com.simibubi.create.content.trains.schedule.ScheduleScreen;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import com.simibubi.create.foundation.gui.menu.AbstractSimiContainerScreen;
@@ -180,6 +177,7 @@ public class CreateEmiPlugin implements EmiPlugin {
 		registry.addWorkstation(MILLING, EmiStack.of(AllBlocks.MILLSTONE.get()));
 		registry.addWorkstation(CRUSHING, EmiStack.of(AllBlocks.CRUSHING_WHEEL.get()));
 		registry.addWorkstation(SANDPAPER_POLISHING, EmiStack.of(AllItems.SAND_PAPER.get()));
+		registry.addWorkstation(SANDPAPER_POLISHING, EmiStack.of(AllItems.RED_SAND_PAPER.get()));
 		registry.addWorkstation(PRESSING, EmiStack.of(AllBlocks.MECHANICAL_PRESS.get()));
 		registry.addWorkstation(FAN_WASHING, FanEmiRecipe.getFan("fan_washing"));
 		registry.addWorkstation(FAN_SMOKING, FanEmiRecipe.getFan("fan_smoking"));
@@ -279,6 +277,9 @@ public class CreateEmiPlugin implements EmiPlugin {
 			}
 		}
 		addAll(registry, AllRecipeTypes.DEPLOYING, DeployingEmiRecipe::new);
+		addAll(registry, AllRecipeTypes.SANDPAPER_POLISHING, DeployingEmiRecipe::fromSandpaper);
+		addAll(registry, AllRecipeTypes.ITEM_APPLICATION, DeployingEmiRecipe::fromItemApplication);
+
 		for (ConversionRecipe recipe : MysteriousConversionEmiRecipe.RECIPES) {
 			registry.addRecipe(new MysteriousConversionEmiRecipe(recipe));
 		}

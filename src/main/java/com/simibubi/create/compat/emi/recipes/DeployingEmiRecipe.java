@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.simibubi.create.compat.emi.CreateEmiAnimations;
 import com.simibubi.create.compat.emi.CreateEmiPlugin;
+import com.simibubi.create.content.equipment.sandPaper.SandPaperPolishingRecipe;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
+import com.simibubi.create.content.kinetics.deployer.ManualApplicationRecipe;
 import com.simibubi.create.foundation.gui.AllGuiTextures;
 
 import dev.emi.emi.api.stack.EmiIngredient;
@@ -36,5 +38,13 @@ public class DeployingEmiRecipe extends CreateEmiRecipe<DeployerApplicationRecip
 		addSlot(widgets, output.get(0), 110, 51).recipeContext(this);
 
 		CreateEmiAnimations.addDeployer(widgets, widgets.getWidth() / 2 - 13, 30);
+	}
+
+	public static DeployingEmiRecipe fromSandpaper(SandPaperPolishingRecipe recipe) {
+		return new DeployingEmiRecipe(DeployerApplicationRecipe.convert(recipe));
+	}
+
+	public static DeployingEmiRecipe fromItemApplication(ManualApplicationRecipe recipe) {
+		return new DeployingEmiRecipe(ManualApplicationRecipe.asDeploying(recipe));
 	}
 }
