@@ -5,3 +5,5 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+include "stubMod"

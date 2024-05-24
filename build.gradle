@@ -62,6 +62,9 @@ def dependencies(DependencyHandler deps) {
         exclude(group: "io.github.fabricators_of_create") // avoid duplicate Porting Lib
     }
 
+    // Stub mod to allow addons to depend on a constant version between sub-patches
+    deps.include(project(":stubMod"))
+
     deps.modApi(deps.include("com.jozufozu.flywheel:flywheel-fabric-$flywheel_minecraft_version:$flywheel_version"))
     deps.modApi(deps.include("com.jamieswhiteshirt:reach-entity-attributes:$reach_entity_attributes_version"))
     deps.modApi(deps.include("io.github.tropheusj:milk-lib:$milk_lib_version"))
@@ -150,7 +153,7 @@ sourceSets {
     main {
         resources {
             srcDir("src/generated/resources")
-            exclude("src/generated/resources/.cache")
+            exclude(".cache")
         }
     }
 }

@@ -12,3 +12,4 @@ Change logging starts below:
 - updated Porting Lib, fixing config syncing
 - fix waterwheels failing to assemble (#1424)
 - fix water wheel structural blocks having missing texture break particles
+- Remove breaks for Sound Physics Remastered

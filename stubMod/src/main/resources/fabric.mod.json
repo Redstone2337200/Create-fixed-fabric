@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "create-fabric",
+  "version": "${version}",
+
+  "name": "Create - Stub Version Jar",
+  "description": "Technology that empowers the player. This is used to allow other mods to depend on sub-patches",
+  "authors": [
+    "Fabricators of Create",
+    "Creators of Create"
+  ],
+  "contact": {
+    "issues": "https://github.com/Fabricators-of-Create/Create/issues",
+    "sources": "https://github.com/Fabricators-of-Create/Create"
+  },
+
+  "license": "MIT",
+
+  "environment": "*",
+
+  "custom": {
+    "modmenu": {
+      "badges": [ "library" ],
+      "parent": {
+        "id": "create"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+plugins {
+    id("java")
+}
+
+group = maven_group
+archivesBaseName = "create-fabric-stub"
+
+version = mod_version
+
+processResources {
+    filesMatching("fabric.mod.json") {
+        expand "version": mod_version
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.WARN
+}
